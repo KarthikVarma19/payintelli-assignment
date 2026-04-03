@@ -7,7 +7,8 @@
   <div class="card-grid">
     @for (user of users(); track user.id) {
       <article class="user-card">
-        <h2>{{ user.name }}</h2>
+        <h2>{{ user.firstName }}</h2>
+        <p>{{ user.email }}</p>
         <p class="role">{{ user.role }}</p>
         <a [routerLink]="['/user', user.id]" class="action-link">View Details</a>
       </article>

@@ -6,8 +6,9 @@
     </div>
   } @else if (user(); as selectedUser) {
     <div class="notice-card">
-      <h1>{{ selectedUser.name }}</h1>
+      <h1>{{ selectedUser.firstName }}</h1>
       <p><strong>Id:</strong> {{ selectedUser.id }}</p>
+      <p><strong>Email:</strong> {{ selectedUser.email }}</p>
       <p><strong>Role:</strong> {{ selectedUser.role }}</p>
     </div>
   } @else {

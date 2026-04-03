@@ -3,13 +3,17 @@ import { Injectable, computed, signal } from '@angular/core';
 export type UserRole = 'Admin' | 'User';
 
 export interface AddUserPayload {
-  name: string;
+  firstName: string;
+  email: string;
+  password: string;
   role: UserRole;
 }
 
 export interface User {
   id: number;
-  name: string;
+  firstName: string;
+  email: string;
+  password: string;
   role: UserRole;
 }
 
@@ -18,8 +22,20 @@ export interface User {
 })
 export class UserStoreService {
   private readonly usersState = signal<User[]>([
-    { id: 1, name: 'Alice', role: 'Admin' },
-    { id: 2, name: 'Bob', role: 'User' }
+    {
+      id: 1,
+      firstName: 'Alice',
+      email: 'alice@example.com',
+      password: 'Alice@123',
+      role: 'Admin'
+    },
+    {
+      id: 2,
+      firstName: 'Bob',
+      email: 'bob@example.com',
+      password: 'Bob@123',
+      role: 'User'
+    }
   ]);
 
   readonly users = computed(() => this.usersState());
@@ -34,10 +50,19 @@ export class UserStoreService {
 
     const newUser: User = {
       id: nextId,
-      name: payload.name.trim(),
+      firstName: payload.firstName.trim(),
+      email: payload.email.trim().toLowerCase(),
+      password: payload.password,
       role: payload.role
     };
 
     this.usersState.update((currentUsers) => [...currentUsers, newUser]);
+  }
+
+  // user email already exists check
+
+  checkUser(email: string): boolean {
+    const normalizedEmail = email.trim().toLowerCase();
+    return this.users().some((user) => user.email === normalizedEmail);
   }
 }

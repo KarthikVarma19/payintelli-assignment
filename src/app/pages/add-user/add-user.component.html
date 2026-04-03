@@ -1,27 +1,47 @@
 <section class="form-page">
   <h1>Add User</h1>
 
-  <form (ngSubmit)="addUser()" class="form-card">
-    <label for="name">Name</label>
+  <form [formGroup]="addUserForm" (ngSubmit)="addUser()" class="form-card">
+    <label for="firstName">First Name</label>
     <input
-      id="name"
-      name="name"
-      [(ngModel)]="name"
-      [class.input-error]="showNameError"
-      placeholder="Enter name"
+      id="firstName"
+      formControlName="firstName"
+      [class.input-error]="showFirstNameError"
+      placeholder="Enter first name"
       required
     />
-    @if (showNameError) {
-      <p class="field-error">Name is required.</p>
+    @if (showFirstNameError) {
+      <p class="field-error">{{ firstNameErrorMessage }}</p>
+    }
+
+    <label for="email">Email Address</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      [class.input-error]="showEmailError"
+      placeholder="Enter email address"
+      required
+    />
+    @if (showEmailError) {
+      <p class="field-error">{{ emailErrorMessage }}</p>
+    }
+
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      [class.input-error]="showPasswordError"
+      placeholder="Enter password"
+      required
+    />
+    @if (showPasswordError) {
+      <p class="field-error">{{ passwordErrorMessage }}</p>
     }
 
     <label for="role">Role</label>
-    <select
-      id="role"
-      name="role"
-      [(ngModel)]="role"
-      required
-    >
+    <select id="role" formControlName="role" required>
       @for (roleOption of roleOptions; track roleOption) {
         <option [value]="roleOption">{{ roleOption }}</option>
       }
