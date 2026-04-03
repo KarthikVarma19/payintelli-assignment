@@ -1,0 +1,51 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.page-header p {
+  margin: 0.35rem 0 0;
+  color: #5c626b;
+}
+
+.card-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.user-card {
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.user-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.role {
+  margin: 0.4rem 0 0.9rem;
+  color: #44515f;
+}
+
+.action-link {
+  color: #0f4ac6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  margin: 0;
+  color: #5c626b;
+}

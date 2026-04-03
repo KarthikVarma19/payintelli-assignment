@@ -1,0 +1,73 @@
+.form-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-page h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.form-card {
+  display: grid;
+  gap: 0.6rem;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid #bcc9d8;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.input-error {
+  border-color: #cf2f2f;
+}
+
+.field-error {
+  margin: -0.2rem 0 0.1rem;
+  color: #cf2f2f;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+button {
+  border: 0;
+  border-radius: 0.5rem;
+  background: #0f4ac6;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d3fa8;
+}
+
+.actions a {
+  text-decoration: none;
+  color: #0f4ac6;
+  font-weight: 600;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+<section class="detail-page">
+  @if (!hasValidId()) {
+    <div class="notice-card error">
+      <h1>Invalid user id</h1>
+      <p>Use a valid numeric id in the URL.</p>
+    </div>
+  } @else if (user(); as selectedUser) {
+    <div class="notice-card">
+      <h1>{{ selectedUser.name }}</h1>
+      <p><strong>Id:</strong> {{ selectedUser.id }}</p>
+      <p><strong>Role:</strong> {{ selectedUser.role }}</p>
+    </div>
+  } @else {
+    <div class="notice-card error">
+      <h1>User not found</h1>
+      <p>The requested user does not exist.</p>
+    </div>
+  }
+
+  <a routerLink="/" class="back-link">Back to User List</a>
+</section>

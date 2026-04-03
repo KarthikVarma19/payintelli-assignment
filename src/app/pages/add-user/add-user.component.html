@@ -1,0 +1,35 @@
+<section class="form-page">
+  <h1>Add User</h1>
+
+  <form (ngSubmit)="addUser()" class="form-card">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      name="name"
+      [(ngModel)]="name"
+      [class.input-error]="showNameError"
+      placeholder="Enter name"
+      required
+    />
+    @if (showNameError) {
+      <p class="field-error">Name is required.</p>
+    }
+
+    <label for="role">Role</label>
+    <select
+      id="role"
+      name="role"
+      [(ngModel)]="role"
+      required
+    >
+      @for (roleOption of roleOptions; track roleOption) {
+        <option [value]="roleOption">{{ roleOption }}</option>
+      }
+    </select>
+
+    <div class="actions">
+      <button type="submit">Add User</button>
+      <a routerLink="/">Cancel</a>
+    </div>
+  </form>
+</section>

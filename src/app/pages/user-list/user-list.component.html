@@ -1,0 +1,18 @@
+<section class="page">
+  <header class="page-header">
+    <h1>User Dashboard</h1>
+    <p>{{ userCount() }} users available</p>
+  </header>
+
+  <div class="card-grid">
+    @for (user of users(); track user.id) {
+      <article class="user-card">
+        <h2>{{ user.name }}</h2>
+        <p class="role">{{ user.role }}</p>
+        <a [routerLink]="['/user', user.id]" class="action-link">View Details</a>
+      </article>
+    } @empty {
+      <p class="empty-state">No users found.</p>
+    }
+  </div>
+</section>

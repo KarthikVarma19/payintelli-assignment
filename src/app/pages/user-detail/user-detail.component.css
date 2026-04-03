@@ -1,0 +1,36 @@
+.detail-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.notice-card {
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.notice-card h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.notice-card p {
+  margin: 0.3rem 0;
+}
+
+.notice-card.error {
+  border-color: #e1b4b4;
+  background: #fff8f8;
+}
+
+.back-link {
+  justify-self: start;
+  text-decoration: none;
+  color: #0f4ac6;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
